@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-    <title>Webpack starter</title>
+    <title>Portland</title>
 
     <!-- Style -->
 
@@ -15,36 +15,81 @@
 </head>
 <body>
 
-    <!--    Navigation   -->
-    <nav class="navigation row">
-        <div class="col-lg-4 row center-xs">
-            <div>
-                <label for="drop-menu"><img src="img/Menu_Icon.png" alt=""></label>
-                <input type="checkbox" class="drop-menu">
-            </div>
-            <div>
-                <img src="img/Portland.png" alt="">
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <ul class="row">
-                <li><a href="">Home</a></li>
-                <li><a href="">Devices</a></li>
-                <li><a href="">Delivery & Payment</a></li>
-                <li><a href="">Guarantee</a></li>
-                <li><a href="">About us</a></li>
-            </ul>
-        </div>
-        <div class="col-lg-4 row center-xs">
-            <div class="row">
+    <!-- Header -->
+
+    <header>
+        <div class="row">
+            <div class="col-lg-4 row center-xs">
                 <div>
-                    <img src="img/Shopping_Cart_Icon.png" alt="">
+                    <img src="img/Menu_Icon.png" alt="">
                 </div>
-                <p>Cart <span>0</span></p>
+                <div>
+                    <img src="img/Portland.png" alt="">
+                </div>
             </div>
-            <a href="">Sign in</a>
+            <div class="col-lg-4">
+                <ul class="row center-xs">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Devices</a></li>
+                    <li><a href="">Delivery & Payment</a></li>
+                    <li><a href="">Guarantee</a></li>
+                    <li><a href="">About us</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 row center-xs">
+                <div class="row">
+                    <div>
+                        <img src="img/Shopping_Cart_Icon.png" alt="">
+                    </div>
+                    <p>Cart <span>0</span></p>
+                </div>
+                <a href="">Sign in</a>
+            </div>
         </div>
-    </nav>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <ul class="row center-xs">
+                    <li><a href="">Top sales</a></li>
+                    <li><a href="">Brand Focus</a></li>
+                    <li><a href="">Hi-Tech</a></li>
+                    <li><a href="">Best sellers</a></li>
+                    <li><a href="">Projects</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-6 row center-xs">
+                <p>Support</p>
+                <div class="row">
+                    <div>
+                        <img src="img/Search_Icon.png" alt="">
+                    </div>
+                    <p>I'm looking for...</p>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+<!-- Slider -->
+
+<div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+    
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+    </div>
 
 
 </body>
