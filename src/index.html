@@ -7,20 +7,27 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
     <title>Webpack starter</title>
 
+    <!-- Style -->
+
+    <link rel="stylesheet" href="sass/normalize.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css" >
 
 </head>
 <body>
 
     <!--    Navigation   -->
-    <nav class="row">
-        <div class="col-lg-4">
-            <label for="drop-menu"><img src="img/Menu_Icon.png" alt=""></label>
-            <input type="checkbox" id="drop-menu">
-            <img src="img/Portland.png" alt="">
+    <nav class="navigation row">
+        <div class="col-lg-4 row center-xs">
+            <div>
+                <label for="drop-menu"><img src="img/Menu_Icon.png" alt=""></label>
+                <input type="checkbox" class="drop-menu">
+            </div>
+            <div>
+                <img src="img/Portland.png" alt="">
+            </div>
         </div>
         <div class="col-lg-4">
-            <ul>
+            <ul class="row">
                 <li><a href="">Home</a></li>
                 <li><a href="">Devices</a></li>
                 <li><a href="">Delivery & Payment</a></li>
@@ -28,13 +35,14 @@
                 <li><a href="">About us</a></li>
             </ul>
         </div>
-        <div class="col-lg-4">
-            <div>
-                <img src="img/Shopping_Cart_Icon.png" alt="">
-                <p>Cart</p>
-                <span>0</span>
+        <div class="col-lg-4 row center-xs">
+            <div class="row">
+                <div>
+                    <img src="img/Shopping_Cart_Icon.png" alt="">
+                </div>
+                <p>Cart <span>0</span></p>
             </div>
-            <button>Sign in</button>
+            <a href="">Sign in</a>
         </div>
     </nav>
 
