@@ -1,5 +1,58 @@
-.swiper-slide{
-  height: 200px;
-  background: #000;
-  color: red;
+@import 'normalize';
+@import 'flexboxgrid';
+@import 'variables';
+
+
+/********** TYPOGRAPHY **********/
+$font-incr: 3;
+$h-font: $heading-font-size + $font-incr;
+$headings: h1, h2, h3, h4, h5, h6;
+@each $h in $headings {
+  #{$h} {
+    font-size: $h-font;
+  }
+  $h-font: $h-font - $font-incr;
+}
+
+.text1 {font-size: 11px;}
+.text2 {font-size: 12px;}
+.text3 {font-size: 13px;}
+.text4 {font-size: 16px;}
+
+.caption-1 {
+  font-size: 42px;
+  font-family: $minor-font1;
+}
+.caption-2 {
+  font-size: 16px;
+  font-family: $minor-font2;
+}
+.caption-3 {
+  font-size: 14px;
+  font-family: $minor-font2;
+}
+
+
+/******** GENERAL STYLES ********/
+body {
+  font-family: $base-font-famify;
+  font-size: $base-font-size;
+  color: $base-font-color;
+}
+
+
+/*********** HELPERS ***********/
+.m-t-0 {
+  margin-top: 0;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+
+/************ HEADER ************/
+.drop-menu {
+  display: none;
 }
