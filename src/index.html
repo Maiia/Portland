@@ -39,6 +39,40 @@
         </div>
     </nav>
 
-
+    <section id="sorting-pannel" class="sorting-pannel block-bg container">
+        <div class="row no-gutters">
+            <div class="col-xs">
+                <label for="sort-best-match">Sort By:</label>
+                <select name="sort-best-match" id="sort-best-match">
+                    <option value="1">Best Match</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+            <div class="col-xs">
+                <label for="sort-keywords"></label>
+                <input placehopder="Tablet" id="sort-keywords">
+            </div>
+            <div class="col-xs">
+                <form action="">
+                    <label for="sort-price-from">Price</label>
+                    <input type="number" min="0" max="1000" id="sort-price-from" placeholder="10"> -
+                    <input type="number" min="0" max="1000" id="sort-price-to" placeholder="1000">
+                </form>
+            </div>
+            <div class="col-xs">
+                <input id="sort-free-shipping" type="checkbox">
+                <label for="sort-free-shipping">Free Shipping</label>
+            </div>
+            <div class="col-xs">
+                <label for="sort-country">Ship to:</label>
+                <select name="sort-country" id="sort-country">
+                    <option value="USA">USA</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Ukraine">Ukraine</option>
+                </select>
+            </div>
+        </div>
+    </section>
 </body>
 </html>

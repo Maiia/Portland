@@ -1,0 +1,10 @@
+@import 'variables';
+
+/******** SORTING PANNEL ********/
+.sorting-pannel {
+  label {
+    text-transform: uppercase;
+    color: $grey-400;
+    @extend .text1;
+  }
+}

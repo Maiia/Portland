@@ -34,14 +34,78 @@ $headings: h1, h2, h3, h4, h5, h6;
 
 
 /******** GENERAL STYLES ********/
+html {
+  overflow: hidden;
+  min-height: 100vh;
+}
+
 body {
-  font-family: $base-font-famify;
+  font-family: $base-font;
   font-size: $base-font-size;
   color: $base-font-color;
+  background: $grey-200;
+}
+
+select {
+  border: none;
+  font-size: 11px;
+  color: $base-font-color;
+  text-transform: uppercase;
+  letter-spacing: 1.1;
+  font-family: $base-font;
 }
 
 
 /*********** HELPERS ***********/
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.no-gutters {
+  margin: 0;
+  
+  & > [class*="col-"] {
+      padding-left: 0;
+      padding-right: 0;
+  }
+  padding: 0;
+}
 .m-t-0 {
   margin-top: 0;
 }
@@ -51,8 +115,14 @@ body {
 .text-right {
   text-align: right;
 }
-
-/************ HEADER ************/
-.drop-menu {
-  display: none;
+.block-bg {
+  padding: 10px;
+  background: white;
+  border-radius: 5px;
 }
+
+
+/*********** IMPORTS **********/
+
+@import 'sorting-pannel';
+
