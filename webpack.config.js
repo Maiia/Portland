@@ -68,6 +68,10 @@ const config = {
           name: 'fonts/[name][hash].[ext]'
         }
       },
+    }, {
+      test: /\.js$/, // Check for all js files
+      exclude: /node_modules\/(?!(dom7|ssr-window|swiper)\/).*/,
+      loader: 'babel-loader'
     }]
   },
   plugins: [
