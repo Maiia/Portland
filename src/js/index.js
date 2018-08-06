@@ -4,8 +4,7 @@ import Swiper from 'swiper';
 
 
 var mySwiper = new Swiper ('.swiper-container', {
-    speed: 400,
-    spaceBetween: 100,
+    loop: true,
 
     // If we need pagination
     pagination: {

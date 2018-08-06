@@ -13,53 +13,63 @@
 
     <!-- Header -->
 
-    <header>
-        <div class="row">
-            <div class="col-lg-4 row center-xs">
-                <div>
+    <header class="header-container">
+        <div class="row header-row">
+            <div class="col-lg-3 row center-xs header-container__block">
+                <div class="header-container__block--bar">
                     <img src="img/Menu_Icon.png" alt="">
                 </div>
-                <div>
+                <div class="header-container__block--img">
                     <img src="img/Portland.png" alt="">
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-6 header-container__block">
                 <ul class="row center-xs">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Devices</a></li>
-                    <li><a href="">Delivery & Payment</a></li>
-                    <li><a href="">Guarantee</a></li>
-                    <li><a href="">About us</a></li>
+                    <li class="header-container__block--elem"><a href="">Home</a></li>
+                    <li class="header-container__block--elem"><a href="">Devices</a></li>
+                    <li class="header-container__block--elem"><a href="">Delivery & Payment</a></li>
+                    <li class="header-container__block--elem"><a href="">Guarantee</a></li>
+                    <li class="header-container__block--elem"><a href="">About us</a></li>
                 </ul>
             </div>
-            <div class="col-lg-4 row center-xs">
-                <div class="row">
-                    <div>
-                        <img src="img/Shopping_Cart_Icon.png" alt="">
+            <div class="col-lg-3 header-container__block">
+                <div class="row center-xs">
+                    <div class="row header-container__block--elem">
+                        <div>
+                            <img src="img/Shopping_Cart_Icon.png" alt="">
+                        </div>
+                        <div class="row header-container__block--elem--cart">
+                            <p>Cart <span>0</span></p>
+                        </div>
                     </div>
-                    <p>Cart <span>0</span></p>
+                    <div class="header-container__block--btn">
+                        <button class="header-container__block--elem--btn">Sign in</button>
+                    </div>
                 </div>
-                <a href="">Sign in</a>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-lg-6">
+        <div class="row header-row">
+            <div class="col-lg-6 header-container__block">
                 <ul class="row center-xs">
-                    <li><a href="">Top sales</a></li>
-                    <li><a href="">Brand Focus</a></li>
-                    <li><a href="">Hi-Tech</a></li>
-                    <li><a href="">Best sellers</a></li>
-                    <li><a href="">Projects</a></li>
+                    <li class="header-container__block--elemb"><a href="">Top sales</a></li>
+                    <li class="header-container__block--elemb"><a href="">Brand Focus</a></li>
+                    <li class="header-container__block--elemb"><a href="">Hi-Tech</a></li>
+                    <li class="header-container__block--elemb"><a href="">Best sellers</a></li>
+                    <li class="header-container__block--elemb"><a href="">Projects</a></li>
                 </ul>
             </div>
-            <div class="col-lg-6 row center-xs">
-                <p>Support</p>
-                <div class="row">
+            <div class="col-lg-6 row center-xs header-container__block">
+                <div class="header-container__block--elemb header-container__block--elemb--supp">
+                    <p>Support</p>
+                </div>
+                <div class="row header-container__block--elemb header-container__block--elemb--supp">
                     <div>
                         <img src="img/Search_Icon.png" alt="">
                     </div>
-                    <p>I'm looking for...</p>
+                    <div>
+                        <input type="text" placeholder="I'm looking for...">
+                    </div>
                 </div>
             </div>
         </div>
@@ -72,9 +82,11 @@
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
             <!-- Slides -->
-            <div class="swiper-slide">Slide 1</div>
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide">
+                <img src="img/iphone_6_space_gray_v3_.RGB_color.0115.png" alt="">
+            </div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
         </div>
         <!-- If we need pagination -->
         <div class="swiper-pagination"></div>
