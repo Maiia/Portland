@@ -49,7 +49,7 @@
     "yargs": "^11.0.0"
   },
   "dependencies": {
-    "font-awesome-icons": "^1.4.3",
+    "@icon/font-awesome": "^4.7.0-2",
     "swiper": "^4.3.5"
   }
 }

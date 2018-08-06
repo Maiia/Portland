@@ -19,3 +19,5 @@ var mySwiper = new Swiper ('.swiper-container', {
     },
 
   })
+
+  import './aside-menu';

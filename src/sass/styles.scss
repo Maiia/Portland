@@ -1,6 +1,7 @@
 @import 'normalize';
 @import 'flexboxgrid';
 @import 'variables';
+@import '~@icon/font-awesome/font-awesome.css';
 
 
 /********** TYPOGRAPHY **********/
@@ -55,8 +56,71 @@ select {
   font-family: $base-font;
 }
 
+input[type="text"],
+input[type="number"] {
+  background: $grey-100;
+  border-radius: $radius2;
+  border: 1px solid $grey-200;
+  box-shadow: none;
+  box-sizing: border-box;
+  height: 32px;
+  padding: 0 10px;
+  line-height: 32px;
+  color: $base-font-color;
+  outline: none;
+
+  &::placeholder, /* Chrome, Firefox, Opera, Safari 10.1+ */
+  &:-ms-input-placeholder, /* Internet Explorer 10-11 */
+  &::-ms-input-placeholder { /* Microsoft Edge */
+    color: $grey-300;
+    opacity: 1; /* Firefox */
+  }
+}
+
+
+.checkbox-custom {
+  position: relative;
+  vertical-align: middle;
+
+  input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    margin-right: 10px;
+    opacity: 0;
+    vertical-align: -5px;
+  }
+
+  span::before {
+    content: '\f00c';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    line-height: 22px;
+    background: $white;
+    text-align: center;
+    color: $white;
+    border-radius: 50%;
+    border: 1px solid $grey-300;
+    @extend .fa;
+  }
+
+  input:checked + span::before {
+    background: $green;
+    color: $white;
+    border-color: $green;
+  }
+}
+
+
 
 /*********** HELPERS ***********/
+.flexbox {
+  display: flex;
+}
+
 .container {
   width: 100%;
   padding-right: 15px;
@@ -118,7 +182,18 @@ select {
 .block-bg {
   padding: 10px;
   background: white;
-  border-radius: 5px;
+  border-radius: $radius1;
+}
+
+.fa {
+  font-family: "font-awesome";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-transform: none;
 }
 
 

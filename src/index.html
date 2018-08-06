@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
     <title>Portland</title>
 </head>
 <body>
@@ -66,7 +68,7 @@
 
 <!-- Slider -->
 
-<div class="swiper-container">
+    <div class="swiper-container">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
             <!-- Slides -->
@@ -85,9 +87,11 @@
         <div class="swiper-scrollbar"></div>
     </div>
 
+
+    <!-- Sorting pannel -->
     <section id="sorting-pannel" class="sorting-pannel block-bg container">
-        <div class="row no-gutters">
-            <div class="col-xs">
+        <div class="row">
+            <div class="col-xs sorting-pannel__item middle-xs flexbox">
                 <label for="sort-best-match">Sort By:</label>
                 <select name="sort-best-match" id="sort-best-match">
                     <option value="1">Best Match</option>
@@ -95,22 +99,24 @@
                     <option value="3">3</option>
                 </select>
             </div>
-            <div class="col-xs">
-                <label for="sort-keywords"></label>
-                <input placehopder="Tablet" id="sort-keywords">
+            <div class="col-xs sorting-pannel__item middle-xs flexbox">
+                <label for="sort-keywords">Keywords</label>
+                <input placehopder="Tablet" id="sort-keywords" type="text">
             </div>
-            <div class="col-xs">
+            <div class="col-xs sorting-pannel__item middle-xs flexbox">
                 <form action="">
                     <label for="sort-price-from">Price</label>
                     <input type="number" min="0" max="1000" id="sort-price-from" placeholder="10"> -
                     <input type="number" min="0" max="1000" id="sort-price-to" placeholder="1000">
                 </form>
             </div>
-            <div class="col-xs">
-                <input id="sort-free-shipping" type="checkbox">
-                <label for="sort-free-shipping">Free Shipping</label>
+            <div class="col-xs sorting-pannel__item middle-xs flexbox">
+                <label for="sort-free-shipping" class="checkbox-custom">
+                    <input id="sort-free-shipping" type="checkbox">
+                    <span>Free Shipping</span>
+                </label>
             </div>
-            <div class="col-xs">
+            <div class="col-xs sorting-pannel__item middle-xs flexbox">
                 <label for="sort-country">Ship to:</label>
                 <select name="sort-country" id="sort-country">
                     <option value="USA">USA</option>
@@ -120,5 +126,17 @@
             </div>
         </div>
     </section>
+
+    <main class="main container">
+        <section class="row">
+            <aside class="col-sm-3">
+                <ul id="aside-menu" class="block-bg"></ul>
+            </aside>
+
+            <section class="products-wrapper col-sm-9">
+                
+            </section>
+        </div>
+    </main>
 </body>
 </html>
