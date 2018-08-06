@@ -3,6 +3,13 @@ import _ from 'lodash';
 import Swiper from 'swiper';
 
 
+
+
+  // .then(function(response) { 
+  //   return response;
+  // }) 
+
+
 var mySwiper = new Swiper ('.swiper-container', {
     loop: true,
 
@@ -10,7 +17,7 @@ var mySwiper = new Swiper ('.swiper-container', {
     pagination: {
       el: '.swiper-pagination',
     },
-
+ 
     // Navigation arrows
     navigation: {
       nextEl: '.swiper-button-next',
@@ -19,4 +26,18 @@ var mySwiper = new Swiper ('.swiper-container', {
 
   })
 
-  import './aside-menu';
+  
+
+  const url = 'http://api.citysdk.waag.org/layers/parking.garage/objects?per_page=5';
+  // export let ProductsData = fetch(url).then(function(response) {
+  //   return response.json();
+  // });
+
+
+  // import { counter } from './aside-menu.js';
+  // import { asd } from './asd.js'
+
+  // asd()
+  // console.log(counter)
+  
+  
