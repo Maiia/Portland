@@ -1,6 +1,9 @@
 @import 'normalize';
 @import 'flexboxgrid';
 @import 'variables';
+@import 'swiper';
+@import 'slider';
+@import 'header';
 
 
 /********** TYPOGRAPHY **********/
@@ -40,7 +43,7 @@ html {
 }
 
 body {
-  font-family: $base-font;
+  //font-family: $base-font-famify;
   font-size: $base-font-size;
   color: $base-font-color;
   background: $grey-200;
