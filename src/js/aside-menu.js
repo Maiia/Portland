@@ -30,10 +30,7 @@ export getMenu
 
 // const amount = 5;
 
-// fetch(window.url + amount)
-//   .then(function(response) {
-//     return response.json();
-//    })
+// 
 
 //   .then(function(response) {
 //     let menu = document.getElementById('aside-menu');

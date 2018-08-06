@@ -39,5 +39,13 @@ var mySwiper = new Swiper ('.swiper-container', {
 
   // asd()
   // console.log(counter)
+ 
+  
+  fetch('data.json').then(item => console.log(item));
+
+  
+  // .then(function(response) {
+  //   return response.json();
+  //  }) 
   
   
