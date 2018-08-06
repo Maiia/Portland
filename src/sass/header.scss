@@ -1,3 +1,105 @@
-header {
-    padding: 15px;
-}
+@import 'variables';
+
+.header-container {
+    background-color: #fff;
+    font-family: $base-font;
+
+    .header-row {
+            border-bottom: 1px solid #f2f0f7;
+        
+        .header-container__block {
+            padding: 0 15px;
+
+            .header-container__block--bar {
+                border-right: 1px solid #f2f0f7;
+                padding: 25px 30px;
+                cursor: pointer;
+            }
+
+            .header-container__block--img {
+                padding: 20px 30px;
+            }
+
+            .header-container__block--btn {
+                padding: 20px 15px;
+
+                button {
+                    padding: 5px 15px;
+                    border-radius: 16px;
+                    border: 2px solid #e3e8f0;
+                    color: #343e5c;
+                    text-transform: uppercase;
+                    font-size: 11px;
+                    cursor: pointer;
+                    background-color: $white;
+                }
+            }
+
+            .header-container__block--elem {
+                padding: 25px 15px;
+                margin: 0;
+
+                .header-container__block--elem--cart {
+                    margin: 0 10px;
+                
+                    span {
+                        border-radius: 50%;
+                        background-color: #e3e8f0;
+                        padding: 5px 10px;
+                    }
+                }
+
+                a {
+                    text-decoration: none;
+                    color: #343e5c;            
+                }
+
+                p {
+                     margin: 0;
+                }
+            }
+
+            ul {
+                list-style: none;
+                margin: 0;
+            }
+
+            .header-container__block--elemb {
+                padding: 15px;
+                margin: 0;
+                color: $grey-300;
+                font-family: $base-font;
+
+                p {
+                    margin: 0;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: $grey-300;
+                    text-transform: uppercase;
+                    font-size: 11px;
+                }
+            }
+
+            .header-container__block--elemb--supp {
+                border-right: 1px solid #f2f0f7;
+                padding: 15px 30px;
+
+                img {
+                    margin: 0 10px;
+                }
+
+                input {
+                    border: none;
+                    outline: none;
+                    font-family: $base-font;
+                }
+
+                ::placeholder {
+                    color: $grey-300;
+                }
+            }
+        }
+    }
+} 
