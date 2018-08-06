@@ -1,0 +1,423 @@
+[
+    {
+        "id": 1,
+        "category": "phone",
+        "brand": "motorola", 
+        "name": "Motorola G6", 
+        "imageUrl": "./img/1.png", 
+        "price": 499,
+        "color": "black",
+        "top-sales": 150,
+        "shipping": 0,
+        "sale": 459,
+        "available": {
+            "store": true,
+            "online": true
+        },
+        "condition": {
+            "new": true,
+            "used": false,
+            "for-parts": false
+        }
+    }, 
+    {
+        "id": 2,
+        "category": "phone",
+        "brand": "motorola", 
+        "name": "Motorola G6", 
+        "imageUrl": "./img/2.png", 
+        "price": 399,
+        "color": "silver",
+        "top-sales": 50,
+        "shipping": 0,
+        "sale": 0,
+        "available": {
+            "store": false,
+            "online": true
+        },
+        "condition": {
+            "new": true,
+            "used": false,
+            "for-parts": false
+        }
+    }, 
+    {
+        "id": 3,
+        "category": "phone",
+        "brand": "apple", 
+        "name": "Apple iPhone8", 
+        "imageUrl": "./img/3.jpg", 
+        "price": 799,
+        "color": "pink",
+        "top-sales": 120,
+        "shipping": 0,
+        "sale": 759,
+        "available": {
+            "store": true,
+            "online": true
+        },
+        "condition": {
+            "new": true,
+            "used": false,
+            "for-parts": false
+        }
+    }, 
+    {
+        "id": 4,
+        "category": "Apple iPhone8",
+        "brand": "bose", 
+        "name": "Bose", 
+        "imageUrl": "./img/4.jpg", 
+        "price": 399,
+        "color": "red",
+        "top-sales": 80,
+        "shipping": 0,
+        "sale": 0,
+        "available": {
+            "store": true,
+            "online": false
+        },
+        "condition": {
+            "new": false,
+            "used": false,
+            "for-parts": true
+        }
+    },
+    {
+        "id": 5,
+        "category": "phone",
+        "brand": "samsung", 
+        "name": "Samsung Galaxy S5", 
+        "imageUrl": "./img/5.jpg", 
+        "price": 359,
+        "color": "blue",
+        "top-sales": 60,
+        "shipping": 0,
+        "sale": 329,
+        "available": {
+            "store": true,
+            "online": true
+        },
+        "condition": {
+            "new": true,
+            "used": false,
+            "for-parts": true
+        }
+    }, 
+    {
+        "id": 6,
+        "category": "camera",
+        "brand": "canon", 
+        "name": "Canon 600D", 
+        "imageUrl": "./img/6.jpg", 
+        "price": 489,
+        "color": "black",
+        "top-sales": 130,
+        "shipping": 4.99,
+        "sale": 459,
+        "available": {
+            "store": true,
+            "online": true
+        },
+        "condition": {
+            "new": true,
+            "used": false,
+            "for-parts": true
+        }
+    }, 
+    {
+        "id": 7,
+        "category": "camera",
+        "brand": "canon", 
+        "name": "Canon EOS 1300D", 
+        "imageUrl": "./img/7.jpg", 
+        "price": 599,
+        "color": "black",
+        "top-sales": 100,
+        "shipping": 4.99,
+        "sale": 0,
+        "available": {
+            "store": true,
+            "online": false
+        },
+        "condition": {
+            "new": true,
+            "used": false,
+            "for-parts": false
+        }
+    }, 
+    {
+        "id": 8,
+        "category": "camera",
+        "brand": "nikon", 
+        "name": "Nikon D3100", 
+        "imageUrl": "./img/8.jpg", 
+        "price": 359,
+        "color": "black",
+        "top-sales": 150,
+        "shipping": 0,
+        "sale": 339,
+        "available": {
+            "store": true,
+            "online": true
+        },
+        "condition": {
+            "new": true,
+            "used": false,
+            "for-parts": false
+        }
+    }, 
+    {
+        "id": 9,
+        "category": "camera",
+        "brand": "nikon", 
+        "name": "Nikon D750", 
+        "imageUrl": "./img/8.jpg", 
+        "price": 559,
+        "color": "white",
+        "top-sales": 80,
+        "shipping": 0,
+        "sale": 0,
+        "available": {
+            "store": true,
+            "online": false
+        },
+        "condition": {
+            "new": false,
+            "used": true,
+            "for-parts": false
+        }
+    }, 
+    {
+        "id": 10,
+        "category": "computer",
+        "brand": "asus", 
+        "name": "Asus X553M", 
+        "imageUrl": "./img/10.jpg", 
+        "price": 459,
+        "color": "silver",
+        "top-sales": 60,
+        "shipping": 0,
+        "sale": 0,
+        "available": {
+            "store": true,
+            "online": true
+        },
+        "condition": {
+            "new": true,
+            "used": false,
+            "for-parts": false
+        }
+    },
+    {
+        "id": 11,
+        "category": "computer",
+        "brand": "lenovo", 
+        "name": "Lenovo ThinkPad Yoga 260", 
+        "imageUrl": "./img/11.png", 
+        "price": 599,
+        "color": "black",
+        "top-sales": 50,
+        "shipping": 0,
+        "sale": 559,
+        "available": {
+            "store": true,
+            "online": true
+        },
+        "condition": {
+            "new": true,
+            "used": false,
+            "for-parts": false
+        }
+    },
+    {
+        "id": 12,
+        "category": "computer",
+        "brand": "hp", 
+        "name": "HP Notebook", 
+        "imageUrl": "./img/12.png", 
+        "price": 499,
+        "color": "black",
+        "top-sales": 150,
+        "shipping": 0,
+        "sale": 0,
+        "available": {
+            "store": false,
+            "online": true
+        },
+        "condition": {
+            "new": true,
+            "used": false,
+            "for-parts": true
+        }
+    },
+    {
+        "id": 13,
+        "category": "computer",
+        "brand": "asus", 
+        "name": "Asus X501A", 
+        "imageUrl": "./13.jpg", 
+        "price": 399,
+        "color": "black",
+        "top-sales": 200,
+        "shipping": 4.99,
+        "sale": 0,
+        "available": {
+            "store": false,
+            "online": true
+        },
+        "condition": {
+            "new": true,
+            "used": false,
+            "for-parts": false
+        }
+    },
+    {
+        "id": 14,
+        "category": "computer",
+        "brand": "apple", 
+        "name": "Laptop Apple Macbook Pro i5", 
+        "imageUrl": "./img/14.jpg", 
+        "price": 499,
+        "color": "white",
+        "top-sales": 150,
+        "shipping": 0,
+        "sale": 459,
+        "available": {
+            "store": true,
+            "online": true
+        },
+        "condition": {
+            "new": true,
+            "used": false,
+            "for-parts": false
+        }
+    },
+    {
+        "id": 15,
+        "category": "tablet",
+        "brand": "samsung", 
+        "name": "Samsung Galaxy Tab S3 9.7", 
+        "imageUrl": "./img/15.jpg", 
+        "price": 579,
+        "color": "black",
+        "top-sales": 190,
+        "shipping": 0,
+        "sale": 0,
+        "available": {
+            "store": true,
+            "online": true
+        },
+        "condition": {
+            "new": true,
+            "used": false,
+            "for-parts": false
+        }
+    },
+    {
+        "id": 16,
+        "category": "tablet",
+        "brand": "apple", 
+        "name": "Apple iPad Tablet", 
+        "imageUrl": "./img/16.jpg", 
+        "price": 689,
+        "color": "pink",
+        "top-sales": 220,
+        "shipping": 0,
+        "sale": 629,
+        "available": {
+            "store": true,
+            "online": true
+        },
+        "condition": {
+            "new": true,
+            "used": false,
+            "for-parts": false
+        }
+    },
+    {
+        "id": 17,
+        "category": "tablet",
+        "brand": "apple", 
+        "name": "Apple iPad Mini 4", 
+        "imageUrl": "./img/17.jpg", 
+        "price": 529,
+        "color": "black",
+        "top-sales": 150,
+        "shipping": 0,
+        "sale": 499,
+        "available": {
+            "store": true,
+            "online": true
+        },
+        "condition": {
+            "new": true,
+            "used": false,
+            "for-parts": false
+        }
+    },
+    {
+        "id": 18,
+        "category": "tablet",
+        "brand": "samsung", 
+        "name": "Samsung Galaxy Tab S2 9.7", 
+        "imageUrl": "./img/18.jpg", 
+        "price": 499,
+        "color": "white",
+        "top-sales": 150,
+        "shipping": 0,
+        "sale": 459,
+        "available": {
+            "store": true,
+            "online": true
+        },
+        "condition": {
+            "new": true,
+            "used": false,
+            "for-parts": false
+        }
+    },
+    {
+        "id": 19,
+        "category": "tablet",
+        "brand": "eagle", 
+        "name": "Tablet EAGLE 1066 Kruger&Matz", 
+        "imageUrl": "./img/19.jpg", 
+        "price": 299,
+        "color": "black",
+        "top-sales": 150,
+        "shipping": 0,
+        "sale": 0,
+        "available": {
+            "store": false,
+            "online": true
+        },
+        "condition": {
+            "new": true,
+            "used": false,
+            "for-parts": true
+        }
+    },
+    {
+        "id": 20,
+        "category": "tablet",
+        "brand": "motorola", 
+        "name": "MOTOROLA XOOM ", 
+        "imageUrl": "./img/20.jpg", 
+        "price": 349,
+        "color": "black",
+        "top-sales": 150,
+        "shipping": 0,
+        "sale": 329,
+        "available": {
+            "store": false,
+            "online": true
+        },
+        "condition": {
+            "new": true,
+            "used": false,
+            "for-parts": false
+        }
+    } 
+   
+]
