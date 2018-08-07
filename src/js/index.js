@@ -35,17 +35,12 @@ var mySwiper = new Swiper ('.swiper-container', {
 
 
   // import { counter } from './aside-menu.js';
-  // import { asd } from './asd.js'
+  import { Data } from './data.js'
 
-  // asd()
-  // console.log(counter)
- 
+  // let data = new Data();
+  import { asd } from './asd.js'
   
-  fetch('data.json').then(item => console.log(item));
 
-  
-  // .then(function(response) {
-  //   return response.json();
-  //  }) 
-  
+
+
   

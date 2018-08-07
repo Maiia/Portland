@@ -1,31 +1,36 @@
-
-
-
 // import { counter, inc } from './index'; 
 export const counter = "test";
 
 
 class ASD {
-  PRROP: NULL;
+  // PRROP: NULL;
 
-  get(){
+  // get(){
     
-  }
+  // }
 
-  getMenu(){
-    return PRROP.filter(item => item.type === "menu")
-  }
+  // getMenu(){
+  //   return PRROP.filter(item => item.type === "menu")
+  // }
 
-  set(asd){
-    this.PRROP = asd;
-  }
+  // set(asd){
+  //   this.PRROP = asd;
+  // }
 
-  fetchData(){
-    set
-  }
+  // fetchData(){
+  // }
+
+  // set data(){
+    // return fetch('https://jullienfall.github.io/data/db.json').then(item => console.log(item));
+  // }
+  
 }
 
-export getMenu
+// fetch('https://jullienfall.github.io/data/db.json').then(item => console.log(item))
+
+// let a = ASD[data];
+
+// export { a };
 // ProductsData.then(function(data){console.log(data)});
 
 // const amount = 5;
@@ -38,7 +43,7 @@ export getMenu
 //     response.features.forEach(item => {
 //       let itemLi = document.createElement('li');
 //       let itemA = document.createElement('a');
-        set()
+        // set()
 //       itemA.innerHTML = item.properties.title;
 //       menu.appendChild(itemLi).appendChild(itemA);
 //     })

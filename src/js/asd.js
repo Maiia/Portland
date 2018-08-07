@@ -1,5 +1,15 @@
-import { getCounter } from "./aside-menu";
+import { Data } from "./data";
 
-export const asd = ()=>{
-    getCounter()
-}
+Data.getData().then((b)=>{
+    console.log(111)
+  })
+
+  
+Data.getData().then((b)=>{
+    console.log(111)
+  })
+
+
+//   Data.getCategory('computer').then((c)=>{
+//     console.log(1111, c)
+//   }) 
