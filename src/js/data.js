@@ -1,26 +1,13 @@
 class DataClass {
 
-  constructor() {
-    if (!this.DATA) {
-      this.DATA = [];
-      console.log("HRENASE");
-    }
-  }
+  constructor(DATA) {
+       this.DATA = DATA;
+ }
 
-  getData(){
-    // console.log(this.DATA, this.DATA.length);
-    return "" + this.DATA.length ?
-      fetch('https://jullienfall.github.io/data/db.json')
-      .then(item => item.json())
-      .then((item) => {
-        console.log('getData', this.DATA.length);
-        this.DATA.push(...item);
-        return this.DATA})
-    :
-      console.log("BBBBBB", !Object.is(this.DATA, null))
-      // console.log('this.DATA');
-
-      this.DATA
+ getData() {
+      return fetch('https://jullienfall.github.io/data/db.json')
+        .then(item => item.json())
+        .then(item => this.DATA = item);
     }
 
   getCategory(catName){
@@ -30,6 +17,5 @@ class DataClass {
   }
 }
 let Data = new DataClass();
-
 
 export { Data };

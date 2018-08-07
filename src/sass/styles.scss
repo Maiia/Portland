@@ -3,8 +3,6 @@
 @import 'variables';
 @import '~@icon/font-awesome/font-awesome.css';
 @import 'swiper';
-@import 'slider';
-@import 'header';
 
 
 /********** TYPOGRAPHY **********/
@@ -202,5 +200,7 @@ input[type="number"] {
 
 /*********** IMPORTS **********/
 
+@import 'header';
+@import 'slider';
 @import 'sorting-pannel';
 
