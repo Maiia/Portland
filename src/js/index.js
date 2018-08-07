@@ -39,6 +39,7 @@ var mySwiper = new Swiper ('.swiper-container', {
 
   // let data = new Data();
   import { asd } from './asd.js'
+  import { aside } from './aside-menu.js'
   
 
 

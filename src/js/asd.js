@@ -1,13 +1,14 @@
 import { Data } from "./data";
 
-Data.getData().then((b)=>{
-    console.log(111)
-  })
+// Data.getData().then((b)=>{
+//     // console.log(b)
+//   })
+// Data.getCategory('computer');
 
   
-Data.getData().then((b)=>{
-    console.log(111)
-  })
+// Data.getCategory('computer').then((b)=>{
+//     console.log('ins1', b);
+//   })
 
 
 //   Data.getCategory('computer').then((c)=>{

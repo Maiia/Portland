@@ -39,12 +39,12 @@ $headings: h1, h2, h3, h4, h5, h6;
 
 /******** GENERAL STYLES ********/
 html {
-  overflow: hidden;
-  min-height: 100vh;
+  // overflow: hidden;
+  // min-height: 100vh;
 }
 
 body {
-  //font-family: $base-font-famify;
+  font-family: $base-font;
   font-size: $base-font-size;
   color: $base-font-color;
   background: $grey-200;
@@ -78,6 +78,12 @@ input[type="number"] {
     color: $grey-300;
     opacity: 1; /* Firefox */
   }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 
@@ -126,8 +132,8 @@ input[type="number"] {
 
 .container {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 0;
+  padding-left: 0;
   margin-right: auto;
   margin-left: auto;
 }
@@ -183,7 +189,7 @@ input[type="number"] {
   text-align: right;
 }
 .block-bg {
-  padding: 10px;
+  padding: 10px 15px;
   background: white;
   border-radius: $radius1;
 }
@@ -203,4 +209,5 @@ input[type="number"] {
 /*********** IMPORTS **********/
 
 @import 'sorting-pannel';
+@import 'sidebar';
 

@@ -101,8 +101,8 @@
 
 
     <!-- Sorting pannel -->
-    <section id="sorting-pannel" class="sorting-pannel block-bg container">
-        <div class="row">
+    <section id="sorting-pannel" class="sorting-pannel container">
+        <div class="block-bg flexbox">
             <div class="col-xs sorting-pannel__item middle-xs flexbox">
                 <label for="sort-best-match">Sort By:</label>
                 <select name="sort-best-match" id="sort-best-match">
@@ -142,13 +142,21 @@
     <main class="main container">
         <section class="row">
             <aside class="col-sm-3">
-                <ul id="aside-menu" class="block-bg"></ul>
+                <ul id="aside-menu" class="aside-menu block-bg">
+                    <li><span>Top sales</span></li>
+                    <li><span>Brand Focus</span></li>
+                    <li><span>Hi-Tech</span>
+                        <ul id="aside-categories" class="aside-categories"></ul>
+                    </li>
+                    <li><span>Home</span></li>
+                    <li><span>Sale</span></li>
+                </ul>
             </aside>
 
             <section class="products-wrapper col-sm-9">
                 
             </section>
-        </div>
+        </section>
     </main>
 </body>
 </html>
