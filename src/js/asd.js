@@ -1,5 +1,6 @@
 import { Data } from "./data";
 
+<<<<<<< HEAD
 // Data.getData().then((b)=>{
 //     // console.log(b)
 //   })
@@ -9,8 +10,12 @@ import { Data } from "./data";
 // Data.getCategory('computer').then((b)=>{
 //     console.log('ins1', b);
 //   })
+=======
+Data.getData().then(b => console.log(b));
 
+Data.getCategory('computer').then(c => console.log(c));
 
-//   Data.getCategory('computer').then((c)=>{
-//     console.log(1111, c)
-//   }) 
+>>>>>>> origin
+
+  
+

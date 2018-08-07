@@ -94,6 +94,9 @@
                     border: none;
                     outline: none;
                     font-family: $base-font;
+                    height: auto;
+                    background-color: #fff;
+                    line-height: 14px;
                 }
 
                 ::placeholder {
