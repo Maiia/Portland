@@ -1,6 +1,5 @@
 class DataClass {
 
-<<<<<<< HEAD
   constructor() {
     this.DATA = null;
     this.getData();
@@ -15,17 +14,6 @@ class DataClass {
         return this.DATA
       })
   }
-=======
-  constructor(DATA) {
-       this.DATA = DATA;
- }
-
- getData() {
-      return fetch('https://jullienfall.github.io/data/db.json')
-        .then(item => item.json())
-        .then(item => this.DATA = item);
-    }
->>>>>>> origin
 
   getCategory(catName){
     // if(this.DATA.length > 0) {
@@ -37,7 +25,22 @@ class DataClass {
   // }
   }
 
-  getCategoriesListing(amount) {
+  getCategoriesListing(amount = false) {
+    let arrWithCats = new Set();
+    return this.getData().then(data => {
+      for (let item of data) {
+        arrWithCats.add(item.category);
+        if(amount && arrWithCats.size == amount + 1){
+          break;
+        }
+      }
+      return arrWithCats;
+    });
+  }
+
+  
+
+  getBrandsListing(amount) {
     let arrWithCats = new Set(); 
     return this.getData().then(data => {
       for (let item of data) {
@@ -51,9 +54,6 @@ class DataClass {
   }
 }
 
-<<<<<<< HEAD
 let Data = new DataClass();
 
-=======
->>>>>>> origin
 export { Data };

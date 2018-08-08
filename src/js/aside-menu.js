@@ -1,13 +1,79 @@
 import { Data } from "./data";
-  
-Data.getCategoriesListing('5').then((arrItems) => {
-    let menu = document.getElementById('aside-categories');
+
+const shortAmount = 3;
+let menuCategories = document.getElementById('aside-categories');
+let fullCategoriesList;
+
+function getCategoriesPromice(amount = false) {
+  return Data.getCategoriesListing(amount).then((arrItems) => {
     let arr = [...arrItems];
-    console.log(arr);
-    arr.forEach(element => {
-        let itemLi = document.createElement('li');
-        let itemA = document.createElement('a');
-        itemA.innerHTML = element;
-        menu.appendChild(itemLi).appendChild(itemA);
+    createMenuItems(arr, menuCategories, amount);
+    return arr;
+  })  
+}
+
+function createMenuItems(arr, htmlElWrapper, amount = false) {
+  let htmlStr = ``;
+  
+  arr.forEach(element => {
+    htmlStr += `<li><span>${element}</span></li>`
+  });
+
+  htmlElWrapper.innerHTML = htmlStr;
+
+  if(amount && amount < arr.length) {
+    let itemLi = htmlElWrapper.querySelector('li:nth-last-child(1)');
+    itemLi.innerHTML = `<span id="view-all" class="view-all">Show all</span>`;
+    
+    itemLi.querySelector('#view-all').addEventListener('click', () => {
+      // if(fullCategoriesList){
+
+      // } else {
+        
+      // }
+      getCategoriesPromice()
+        .then((list) => {
+          fullCategoriesList = list;
+          htmlElWrapper.insertAdjacentHTML('beforeend', `<li><span id="view-short" class="view-all">Show ${shortAmount}</span></li>`);
+          htmlElWrapper.querySelector('#view-short').addEventListener('click', () => {
+            getCategoriesPromice(shortAmount).then(() => reloadHeight(menuCategories.parentNode))
+          });
+        })
+        .then(() => reloadHeight(menuCategories.parentNode))
     });
-})
+  }
+}
+
+// Accordion
+function accordion() {
+  let menuTriggerItems = document.querySelectorAll('#aside-menu > li');
+
+  menuTriggerItems.forEach(item => {
+    item.parentNode.querySelector('.aside-menu__inner').style.top = item.clientHeight + 'px';
+    item.addEventListener('click', (e) => toggleMenuItem(e));
+  })
+}
+
+function toggleMenuItem(e) {
+  let evt = e;
+  let currentParent = evt.target.closest('li');
+
+  if(currentParent.querySelector('.aside-menu__inner')) {
+      parseInt(currentParent.style.paddingBottom, 10) == 0 || currentParent.style.paddingBottom == 0 ?
+        reloadHeight(currentParent) : currentParent.style.paddingBottom = 0;
+  }
+}
+
+function reloadHeight(menuWrItem) {
+  console.log(1, menuWrItem.querySelector('.aside-menu__inner').clientHeight);
+  menuWrItem.style.paddingBottom = menuWrItem.querySelector('.aside-menu__inner').clientHeight + 'px';
+  console.log(2, menuWrItem.querySelector('.aside-menu__inner').clientHeight);
+
+}
+
+
+getCategoriesPromice(shortAmount);
+
+window.onload = function() {
+  accordion();
+}
