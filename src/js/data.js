@@ -1,6 +1,5 @@
 class DataClass {
 
-<<<<<<< HEAD
   constructor() {
     this.DATA = null;
     this.getData();
@@ -15,17 +14,6 @@ class DataClass {
         return this.DATA
       })
   }
-=======
-  constructor(DATA) {
-       this.DATA = DATA;
- }
-
- getData() {
-      return fetch('https://jullienfall.github.io/data/db.json')
-        .then(item => item.json())
-        .then(item => this.DATA = item);
-    }
->>>>>>> origin
 
   getCategory(catName){
     // if(this.DATA.length > 0) {
@@ -51,9 +39,6 @@ class DataClass {
   }
 }
 
-<<<<<<< HEAD
-let Data = new DataClass();
+let Data = new DataClass;
 
-=======
->>>>>>> origin
 export { Data };
