@@ -54,10 +54,6 @@ class DataClass {
   }
 }
 
-<<<<<<< HEAD
-let Data = new DataClass();
-=======
 let Data = new DataClass;
->>>>>>> 921aa977afc5c795ae0e6e68ff2ee05aa6d057c5
 
 export { Data };

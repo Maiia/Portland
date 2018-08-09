@@ -21,28 +21,28 @@ var mySwiper = new Swiper ('.swiper-container', {
 
   // Pagination
 
-  var paginationTopOptions = {
-    name: "paginationTop",
-    paginationClass: "paginationTop",
-    outerWindow: 2
-  };
-  var paginationBottomOptions = {
-    name: "paginationBottom",
-    paginationClass: "paginationBottom",
-    innerWindow: 3,
-    left: 2,
-    right: 4
-  };
-  var listOptions = {
-    valueNames: [ 'name', 'category' ],
-    page: 3,
-    plugins: [
-        ListPagination(paginationTopOptions),
-        ListPagination(paginationBottomOptions)
-    ]
-  };
+  // var paginationTopOptions = {
+  //   name: "paginationTop",
+  //   paginationClass: "paginationTop",
+  //   outerWindow: 2
+  // };
+  // var paginationBottomOptions = {
+  //   name: "paginationBottom",
+  //   paginationClass: "paginationBottom",
+  //   innerWindow: 3,
+  //   left: 2,
+  //   right: 4
+  // };
+  // var listOptions = {
+  //   valueNames: [ 'name', 'category' ],
+  //   page: 3,
+  //   plugins: [
+  //       ListPagination(paginationTopOptions),
+  //       ListPagination(paginationBottomOptions)
+  //   ]
+  // };
 
-  var listObj = new List('listId', listOptions);
+  // var listObj = new List('listId', listOptions);
 
 
 

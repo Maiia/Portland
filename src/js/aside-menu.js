@@ -26,20 +26,15 @@ function createMenuItems(arr, htmlElWrapper, amount = false) {
     itemLi.innerHTML = `<span id="view-all" class="view-all">Show all</span>`;
     
     itemLi.querySelector('#view-all').addEventListener('click', () => {
-      // if(fullCategoriesList){
 
-      // } else {
-        
-      // }
       getCategoriesPromice()
-        .then((list) => {
-          fullCategoriesList = list;
+        .then(() => {
           htmlElWrapper.insertAdjacentHTML('beforeend', `<li><span id="view-short" class="view-all">Show ${shortAmount}</span></li>`);
           htmlElWrapper.querySelector('#view-short').addEventListener('click', () => {
-            getCategoriesPromice(shortAmount).then(() => reloadHeight(menuCategories.parentNode))
+            getCategoriesPromice(shortAmount).then(() => reloadHeight(htmlElWrapper.parentNode))
           });
         })
-        .then(() => reloadHeight(menuCategories.parentNode))
+        .then(() => reloadHeight(htmlElWrapper.parentNode))
     });
   }
 }
