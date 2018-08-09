@@ -18,15 +18,16 @@ Data.getData().then((items) => {
         let button = document.createElement('button');
         button.innerHTML = `${p}`;
         button.addEventListener('click', function() {
-            let m = parseFloat(p-1)*parseFloat(n);
-            let newResult = items.slice(m, parseFloat(n));
-            console.log(m);
+            let start = parseFloat(p-1)*parseFloat(n);
+            let end = parseFloat(p)*parseFloat(n);
+            let newResult = items.slice(start, end);
             openPage(newResult);
         });
         pagin.appendChild(button);  
     });
 
     function openPage(res){
+        products.innerHTML = '';
         res.forEach(element => {
             let div = document.createElement('div');
             div.setAttribute('class', 'col-lg-4 col-md-6 col-sm-6 col-xs-12');

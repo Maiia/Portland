@@ -10,7 +10,7 @@ const distPath = path.join(__dirname, '/public');
 
 const config = {
   entry: {
-    main: ['babel-polyfill','./src/js/index.js'],
+    main: './src/js/index.js'
   },
   output: {
     filename: 'bundle.js',
