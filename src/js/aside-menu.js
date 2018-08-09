@@ -1,18 +1,34 @@
 import { Data } from "./data";
 
 const shortAmount = 3;
-let menuCategories = document.getElementById('aside-categories');
-let fullCategoriesList;
+let menuCollections = document.getElementById('aside-categories');
 
-function getCategoriesPromice(amount = false) {
-  return Data.getCategoriesListing(amount).then((arrItems) => {
+// TODO add 
+
+// GET COLLECTIONS
+let fullCollectionsList;
+
+function getCollectionsPromice(amount = false) {
+  return Data.getCollectionsListing(amount).then((arrItems) => {
     let arr = [...arrItems];
-    createMenuItems(arr, menuCategories, amount);
+    createMenuItems(arr, menuCollections, amount, getCollectionsPromice);
     return arr;
+  })
+}
+
+// GET BRANDS
+
+function getBrandsPromice(amount = false) {
+  return Data.getBrandsListing(amount).then((arrItems) => {
+    console.log(arrItems);
+  //   let arr = [...arrItems];
+  //   createMenuItems(arr, menuCollections, amount, getBrandsPromice);
+  //   return arr;
   })  
 }
 
-function createMenuItems(arr, htmlElWrapper, amount = false) {
+
+function createMenuItems(arr, htmlElWrapper, amount = false, getDataFPromice) {
   let htmlStr = ``;
   
   arr.forEach(element => {
@@ -25,18 +41,19 @@ function createMenuItems(arr, htmlElWrapper, amount = false) {
     let itemLi = htmlElWrapper.querySelector('li:nth-last-child(1)');
     itemLi.innerHTML = `<span id="view-all" class="view-all">Show all</span>`;
     
-    itemLi.querySelector('#view-all').addEventListener('click', () => {
-
-      getCategoriesPromice()
-        .then(() => {
-          htmlElWrapper.insertAdjacentHTML('beforeend', `<li><span id="view-short" class="view-all">Show ${shortAmount}</span></li>`);
-          htmlElWrapper.querySelector('#view-short').addEventListener('click', () => {
-            getCategoriesPromice(shortAmount).then(() => reloadHeight(htmlElWrapper.parentNode))
-          });
-        })
-        .then(() => reloadHeight(htmlElWrapper.parentNode))
-    });
+    itemLi.querySelector('#view-all').addEventListener('click', () => onViewAllClick(htmlElWrapper, getDataFPromice))
   }
+}
+
+function onViewAllClick(htmlElWrapper, getDataFPromice) {
+  return getDataFPromice()
+  .then(() => {
+    htmlElWrapper.insertAdjacentHTML('beforeend', `<li><span id="view-short" class="view-all">Show ${shortAmount}</span></li>`);
+    htmlElWrapper.querySelector('#view-short').addEventListener('click', () => {
+      getDataFPromice(shortAmount).then(() => reloadHeight(htmlElWrapper.parentNode))
+    });
+  })
+  .then(() => reloadHeight(htmlElWrapper.parentNode))
 }
 
 // Accordion
@@ -67,7 +84,10 @@ function reloadHeight(menuWrItem) {
 }
 
 
-getCategoriesPromice(shortAmount);
+
+// init
+getCollectionsPromice(shortAmount);
+getBrandsPromice(shortAmount);
 
 window.onload = function() {
   accordion();

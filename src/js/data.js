@@ -6,7 +6,8 @@ class DataClass {
   }
 
   getData(){
-    return fetch('https://jullienfall.github.io/data/db.json')
+    // return fetch('https://jullienfall.github.io/data/db.json')
+    return fetch('https://maiia.github.io/Portland/src/db.json')
       .then(item => item.json())
       .then((item) => {
         this.DATA = item;
@@ -25,11 +26,11 @@ class DataClass {
   // }
   }
 
-  getCategoriesListing(amount = false) {
+  getCollectionsListing(amount = false) {
     let arrWithCats = new Set();
     return this.getData().then(data => {
       for (let item of data) {
-        arrWithCats.add(item.category);
+        arrWithCats.add(item.category); 
         if(amount && arrWithCats.size == amount + 1){
           break;
         }
@@ -38,18 +39,16 @@ class DataClass {
     });
   }
 
-  
-
   getBrandsListing(amount) {
-    let arrWithCats = new Set(); 
+    let arrWithBrands = new Set();
     return this.getData().then(data => {
       for (let item of data) {
-        if(arrWithCats.size == amount || arrWithCats.size == data.length){
+        if(arrWithBrands.size == amount || arrWithBrands.size == data.length){
           break;
         }
-        arrWithCats.add(item.category);
+        arrWithBrands.add(item.brand);
       }
-      return arrWithCats;
+      return arrWithBrands;
     });
   }
 }
