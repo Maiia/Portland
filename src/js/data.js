@@ -25,30 +25,42 @@ class DataClass {
   // }
   }
 
-  getCollectionsListing(amount = false) {
-    let arrWithCats = new Set();
+  getPropsListing(propName, amount = false){
+    let arr = new Set();
     return this.getData().then(data => {
       for (let item of data) {
-        arrWithCats.add(item.category); 
-        console.log('111', amount, arrWithCats.size);
-        if(amount && arrWithCats.size == amount + 1){
-          // break;
+      arr.add(item[propName]); 
+        if(amount && arr.size == amount + 1){
+          break;
         }
       }
-      return arrWithCats;
+      return arr;
     });
   }
 
-  getBrandsListing(amount) {
-    let arrWithBrands = new Set();
+  getCollectionsListing(amount = false) {
+    let arr = new Set();
     return this.getData().then(data => {
       for (let item of data) {
-        if(arrWithBrands.size == amount || arrWithBrands.size == data.length){
+        arr.add(item.category); 
+        if(amount && arr.size == amount + 1){
           break;
         }
-        arrWithBrands.add(item.brand);
       }
-      return arrWithBrands;
+      return arr;
+    });
+  }
+
+  getBrandsListing(amount = false) {
+    let arr = new Set();
+    return this.getData().then(data => {
+      for (let item of data) {
+        arr.add(item.brand); 
+        if(amount && arr.size == amount + 1){
+          break;
+        }
+      }
+      return arr;
     });
   }
 }

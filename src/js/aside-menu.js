@@ -1,63 +1,81 @@
 import { Data } from "./data";
 
-const shortAmount = 50;
-let menuCollections = document.getElementById('aside-categories');
+const shortAmount = 10;
+const rootEl = document.getElementById('aside-menu');
+
 
 // TODO add 
 
-// GET COLLECTIONS
-let fullCollectionsList;
+// Factory
+class MenuProp {
+  constructor(propName) {
+    this.listItems;
+    this.title = propName;
+    this.elWrapper = `aside-${propName}`;
+  }
 
-function getCollectionsPromice(amount = false) {
-  return Data.getCollectionsListing(amount).then((arrItems) => {
-    console.log('GET', arrItems);
-    let arr = [...arrItems];
-    createMenuItems(arr, menuCollections, amount, getCollectionsPromice);
-    return arr;
-  })
-}
-
-// GET BRANDS
-function getBrandsPromice(amount = false) {
-  return Data.getBrandsListing(amount).then((arrItems) => {
-  //   let arr = [...arrItems];
-  //   createMenuItems(arr, menuCollections, amount, getBrandsPromice);
-  //   return arr;
-  })  
-}
-
-
-function createMenuItems(arr, htmlElWrapper, amount = false, getDataFPromice) {
-  let htmlStr = ``;
+  getProps(amount = false) {
+    return Data.getPropsListing(this.title, amount).then((arrItems) => {
+      this.listItems = [...arrItems];
   
-  arr.forEach(element => {
-    htmlStr += `<li><span>${element}</span></li>`
-  });
-
-  htmlElWrapper.innerHTML = htmlStr;
-
-  if(amount && amount < arr.length) {
-    let itemLi = htmlElWrapper.querySelector('li:nth-last-child(1)');
-    itemLi.innerHTML = `<span id="view-all" class="view-all">Show all</span>`;
-    
-    itemLi.querySelector('#view-all').addEventListener('click', () => onViewAllClick(htmlElWrapper, getDataFPromice))
+      this.createMenuItems();
+      this.addViewBtn(amount);
+      return this.listItems;
+    })
+  }
+  
+  createMenuItems() {
+    let htmlStr = ``;
+  
+    this.listItems.forEach(element => {
+      htmlStr += `<li><span>${element}</span></li>`
+    });
+  
+    rootEl.querySelector(`#${this.elWrapper}`).innerHTML = htmlStr;
+  }
+  
+  addViewBtn(amount) {
+    if(amount && amount < this.listItems.length) {
+      let itemLi = rootEl.querySelector(`#${this.elWrapper}`).querySelector('li:nth-last-child(1)');
+      itemLi.innerHTML = `<span id="view-all" class="view-all">Show all</span>`;
+      
+      itemLi.querySelector('#view-all').addEventListener('click', () => {
+        this.onViewAllClick()
+      })
+    }
+  }
+  
+  onViewAllClick() {
+    return this.getProps()
+      .then (
+        () => {
+          rootEl.querySelector(`#${this.elWrapper}`).insertAdjacentHTML('beforeend', `<li><span id="view-short" class="view-all">Show ${shortAmount}</span></li>`);
+          rootEl.querySelector(`#${this.elWrapper}`).querySelector('#view-short').addEventListener('click', () => {
+            return this.getProps(shortAmount)
+              .then((items) => reloadHeight(rootEl.querySelector(`#${this.elWrapper}`).parentNode))
+          });
+        }
+      ).then(
+        () => reloadHeight(rootEl.querySelector(`#${this.elWrapper}`).parentNode)
+      )
   }
 }
 
-function onViewAllClick(htmlElWrapper, getDataFPromice) {
-  return getDataFPromice()
-  .then(() => {
-    htmlElWrapper.insertAdjacentHTML('beforeend', `<li><span id="view-short" class="view-all">Show ${shortAmount}</span></li>`);
-    htmlElWrapper.querySelector('#view-short').addEventListener('click', () => {
-      getDataFPromice(shortAmount).then(() => reloadHeight(htmlElWrapper.parentNode))
-    });
-  })
-  .then(() => reloadHeight(htmlElWrapper.parentNode))
-}
+let CategoriesObj = new MenuProp('category');
+let BrandsObj = new MenuProp('brand');
+
+
+
+
+
 
 // Accordion
+class Accordion {
+  constructor() {}
+}
 function accordion() {
-  let menuTriggerItems = document.querySelectorAll('#aside-menu > li');
+  let id = rootEl.getAttribute('id');
+  let menuTriggerItems = rootEl.querySelectorAll(`#${id} > li`);
 
   menuTriggerItems.forEach(item => {
     item.parentNode.querySelector('.aside-menu__inner').style.top = item.clientHeight + 'px';
@@ -82,8 +100,8 @@ function reloadHeight(menuWrItem) {
 
 
 // init
-getCollectionsPromice(shortAmount);
-getBrandsPromice(shortAmount);
+CategoriesObj.getProps(shortAmount);
+BrandsObj.getProps(shortAmount);
 
 window.onload = function() {
   accordion();

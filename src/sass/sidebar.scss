@@ -54,12 +54,12 @@ aside {
     .opened li {
 
     }
-  }
 
-  .aside-menu__inner {
-    position: absolute;
-    top: 40px; //change
-    left: 0;
-    right: 0;
+    &__inner{
+      position: absolute;
+      top: 40px; //change
+      left: 0;
+      right: 0;
+    }
   }
 }
