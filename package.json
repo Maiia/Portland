@@ -53,7 +53,6 @@
   },
   "dependencies": {
     "@icon/font-awesome": "^4.7.0-2",
-    "list.pagination.js": "^0.1.1",
     "swiper": "^4.3.5"
   }
 }
