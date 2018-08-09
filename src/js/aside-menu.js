@@ -1,6 +1,6 @@
 import { Data } from "./data";
 
-const shortAmount = 3;
+const shortAmount = 50;
 let menuCollections = document.getElementById('aside-categories');
 
 // TODO add 
@@ -10,6 +10,7 @@ let fullCollectionsList;
 
 function getCollectionsPromice(amount = false) {
   return Data.getCollectionsListing(amount).then((arrItems) => {
+    console.log('GET', arrItems);
     let arr = [...arrItems];
     createMenuItems(arr, menuCollections, amount, getCollectionsPromice);
     return arr;
@@ -17,10 +18,8 @@ function getCollectionsPromice(amount = false) {
 }
 
 // GET BRANDS
-
 function getBrandsPromice(amount = false) {
   return Data.getBrandsListing(amount).then((arrItems) => {
-    console.log(arrItems);
   //   let arr = [...arrItems];
   //   createMenuItems(arr, menuCollections, amount, getBrandsPromice);
   //   return arr;
@@ -77,10 +76,7 @@ function toggleMenuItem(e) {
 }
 
 function reloadHeight(menuWrItem) {
-  console.log(1, menuWrItem.querySelector('.aside-menu__inner').clientHeight);
   menuWrItem.style.paddingBottom = menuWrItem.querySelector('.aside-menu__inner').clientHeight + 'px';
-  console.log(2, menuWrItem.querySelector('.aside-menu__inner').clientHeight);
-
 }
 
 

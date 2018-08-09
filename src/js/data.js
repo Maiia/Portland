@@ -6,7 +6,6 @@ class DataClass {
   }
 
   getData(){
-    // return fetch('https://jullienfall.github.io/data/db.json')
     return fetch('https://maiia.github.io/Portland/src/db.json')
       .then(item => item.json())
       .then((item) => {
@@ -31,8 +30,9 @@ class DataClass {
     return this.getData().then(data => {
       for (let item of data) {
         arrWithCats.add(item.category); 
+        console.log('111', amount, arrWithCats.size);
         if(amount && arrWithCats.size == amount + 1){
-          break;
+          // break;
         }
       }
       return arrWithCats;
