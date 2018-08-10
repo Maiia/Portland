@@ -34,7 +34,28 @@ class DataClass {
           break;
         }
       }
-      return arr;
+      return [...arr];
+    });
+  }
+
+    getRangesListing(amount){
+    return this.getData().then(data => {
+      let arr = [];
+      for (let item of data) {
+        arr.push(item['price']);
+      }
+
+      let min = parseInt((Math.min(...arr)/100), 10)*100;
+      let max = parseInt(1 + (Math.max(...arr)/100), 10) * 100;
+
+      let rangeStep = (max - min) / amount;
+      let arrRanges = new Map();
+      var prev = min;
+      for (let i = 0; i < amount; i++){
+        arrRanges.set(prev, `${prev}-${prev + rangeStep - 1}`);
+        prev = prev + rangeStep;
+      }
+      return arrRanges;
     });
   }
 }

@@ -13,11 +13,21 @@ export default class Accordion {
   toggleMenuItem(e) {
     let evt = e;
     let currentParent = evt.target.closest('li');
-  
+    currentParent.classList.add('active');
+
+    let allItems = this.accordion.querySelectorAll('.accordion > li');
+    for(let item of allItems) {
+        if(item != currentParent){
+          item.classList.remove('active');
+          item.style.paddingBottom = 0
+      }
+    }
+
     if(currentParent.querySelector('.aside-menu__inner')) {
         parseInt(currentParent.style.paddingBottom, 10) == 0 || currentParent.style.paddingBottom == 0 ?
-          this.constructor.reloadHeight(currentParent) : currentParent.style.paddingBottom = 0;
+          this.constructor.reloadHeight(currentParent) : currentParent.style.paddingBottom = '0';
     }
+
   }
 
   static reloadHeight(menuWrItem) {
@@ -25,9 +35,5 @@ export default class Accordion {
   }
 }
 
-// init
-// window.onload = function() {
-  // accordion();
 new Accordion();
-// }
 
