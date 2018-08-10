@@ -29,34 +29,8 @@ class DataClass {
     let arr = new Set();
     return this.getData().then(data => {
       for (let item of data) {
-      arr.add(item[propName]); 
-        if(amount && arr.size == amount + 1){
-          break;
-        }
-      }
-      return arr;
-    });
-  }
-
-  getCollectionsListing(amount = false) {
-    let arr = new Set();
-    return this.getData().then(data => {
-      for (let item of data) {
-        arr.add(item.category); 
-        if(amount && arr.size == amount + 1){
-          break;
-        }
-      }
-      return arr;
-    });
-  }
-
-  getBrandsListing(amount = false) {
-    let arr = new Set();
-    return this.getData().then(data => {
-      for (let item of data) {
-        arr.add(item.brand); 
-        if(amount && arr.size == amount + 1){
+      arr.add(item[propName]);
+        if(amount && arr.size === amount + 1){
           break;
         }
       }
