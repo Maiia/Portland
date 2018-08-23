@@ -1,18 +1,116 @@
 .product-row {
+    position: relative;
     margin-top: 30px;
+    transition: opacity 0s ease, top 0s ease;
 
     .product-item {
+        position: relative;
         background: #fff;
         padding: 10px;
         text-align: center;
         margin-bottom: 15px;
         height: 300px;
-
+        border-radius: $radius1;
 
         .product-img {
             max-width: 200px;
             max-height: 200px;
         }
     }
+
+    .sale {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        display: block;
+        padding: 2px 5px;
+        background: rgba($white, .7);
+        border-radius: $radius1;
+        @extend .text1;
+        color: $red;
+        text-decoration: line-through;
+
+        &:empty {display: none;}
+
+        &:not(:empty)::before {
+            content: '$';
+        }
+    }
 }
 
+.product-pagination {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90px;
+    padding: 10px 200px;
+    background: $white;
+    border-radius: $radius1;
+    list-style: none;
+
+    li span {
+        display: block;
+        width: 48px;
+        height: 48px;
+        margin: 10px 6px;
+        line-height: 48px;
+        border-radius: 50%;
+        text-align: center;
+        background: $white;
+
+        &:not(.active) {
+            cursor: pointer;
+        }
+    }
+
+    .active span {
+        color: $grey-300;
+        box-shadow: 0 20px 40px rgba(168, 172, 185, 0.62);
+    }
+
+    .prev,
+    .next {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        width: 200px;
+        justify-content: center;
+        transition: all .2s ease;
+    }
+
+    .prev,
+    .next {
+        cursor: pointer;
+
+        &::before {
+            content: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");
+            display: block;
+            width: 7px;
+            height: 11px;
+        }
+
+        &:hover {
+            color: $grey-300;
+            box-shadow: 0 20px 40px rgba(168, 172, 185, 0.62);
+        }
+    }
+
+    .prev {
+        left: 0;
+    }
+
+    .next::before {
+        transform: rotate(180deg);
+    }
+
+    li:first-child.active ~ .prev,
+    li:nth-last-child(3).active ~ .next {
+        opacity: .4;
+        cursor: default;
+        box-shadow: none;
+    }
+}

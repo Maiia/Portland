@@ -10,19 +10,8 @@ class DataClass {
       .then(item => item.json())
       .then((item) => {
         this.DATA = item;
-        console.log("FIX!!!");
         return this.DATA
       })
-  }
-
-  getCategory(catName){
-    // if(this.DATA.length > 0) {
-    //   return this.DATA.filter(item => item.category === catName);
-    // } else {
-    return this.getData().then(data => {
-      return data.filter(item => item.category === catName);
-    });
-  // }
   }
 
   getPropsListing(propName, amount = false){
@@ -38,7 +27,7 @@ class DataClass {
     });
   }
 
-    getRangesListing(amount){
+  getRangesListing(amount){
     return this.getData().then(data => {
       let arr = [];
       for (let item of data) {
@@ -57,6 +46,36 @@ class DataClass {
       }
       return arrRanges;
     });
+  }
+
+  getAmountAvailable(obj) {
+    return this.getData().then(data => {
+        obj['all'] = data.length;
+
+        for (let item of data) {
+          let i = 0;
+          for (let key in item.available) {
+            if (item.available[key]) {
+              obj[key]++;
+              i++;
+            }
+          }
+          if(i == 2) {
+            obj['store-online']++;
+          }
+        }
+        return obj
+    })
+  }
+
+  getGoodsAmountByProps(obj, prop) {
+      return this.getData().then(data => {
+          for(let item of data) {
+            let value = item[prop];
+            obj[value]++;
+          }
+          return obj
+      })
   }
 }
 

@@ -1,0 +1,62 @@
+
+/******** SORTING PANEL ********/
+.sorting-panel {
+  margin-top: 50px;
+
+  & > .block-bg {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  label {
+    text-transform: uppercase;
+    color: $grey-400;
+    @extend .text1;
+  }
+}
+
+.sorting-panel__item {
+  white-space: nowrap;
+  flex: 0 1 auto;
+  min-width: 0;
+
+  @extend .block-bg__padding;
+
+  &:nth-child(1) {
+    padding-left: 0;
+    padding-right: 24px;
+    border-right: 1px solid $grey-100;
+  }
+
+  &:nth-last-child(1) {
+    padding-right: 0;
+    padding-left: 24px;
+    border-left: 1px solid $grey-100;
+  }
+  
+  input {
+    min-width: 64px;
+  }
+
+  label {
+    margin-right: 12px;
+  }
+}
+
+.sort-by-price input {
+  min-width: 75px;
+  width: 75px;
+  padding-right: 10px;
+}
+
+.sort-keywords {
+  flex: 1 1 auto;
+
+  label {
+    flex: 0 0 auto;
+  }
+
+  input {
+    flex: 1 1 auto;
+  }
+}

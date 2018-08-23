@@ -1,15 +1,22 @@
-@import 'variables';
 
-/******** SIDEBAR PANNEL ********/
+/******** SIDEBAR PANEL ********/
 aside {
   margin-top: 30px;
+
+  .block-bg + .block-bg {
+    margin-top: 30px;
+  }
 
   .aside-menu {
     position: relative;
     padding: 0;
     line-height: 1.2;
     z-index: 1;
-    background: $grey-100;
+
+    & > ul {
+      padding: 0;
+      background: $grey-100;
+    }
 
     li {
       position: relative;
@@ -55,15 +62,46 @@ aside {
       }
     }
 
-    .opened li {
-
-    }
-
     &__inner{
       position: absolute;
-      top: 40px; //change
+      top: 0;
       left: 0;
       right: 0;
     }
+  }
+
+  header {
+    align-items: baseline;
+    border-bottom: 1px solid $grey-100;
+
+    h6 {
+      flex: 1 1 auto;
+      margin-right: 10px;
+      color: $minor-font-color;
+    }
+
+    &:not(:first-child) {
+      border-top: 1px solid $grey-100;
+    }
+  }
+
+  label {
+    padding: 18px 0;
+  }
+}
+
+.aside-filter {
+  .flexbox {
+    align-items: center;
+  }
+
+  .title {
+    flex: 1 1 auto;
+  }
+
+  .amount {
+    flex: 0 0 auto;
+    padding-left: 8px;
+    color: $grey-300;
   }
 }

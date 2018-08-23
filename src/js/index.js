@@ -22,10 +22,11 @@ var mySwiper = new Swiper ('.swiper-container', {
   })
 
 
-  import { Data } from './data.js'
-  import { aside } from './aside-menu.js'
+  import { aside } from './aside-menu.js';
+  import { AsideFilter } from './aside-filtering';
+  import { SortingPanelFilter } from './sorting-panel-filtering';
   import { product } from './product';
-  
+
 
 
 

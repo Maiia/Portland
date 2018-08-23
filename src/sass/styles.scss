@@ -1,7 +1,7 @@
 @import 'normalize';
 @import 'flexboxgrid';
 @import 'variables';
-//@import '~@icon/font-awesome/font-awesome.css';
+@import 'font-awesome.min';
 @import 'swiper';
 
 
@@ -11,6 +11,7 @@ $h-font: $heading-font-size + $font-incr;
 $headings: h1, h2, h3, h4, h5, h6;
 @each $h in $headings {
   #{$h} {
+    margin: 0;
     font-size: $h-font;
   }
   $h-font: $h-font - $font-incr;
@@ -42,6 +43,7 @@ html {
 }
 
 body {
+  padding-bottom: 50px;
   font-family: $base-font;
   font-size: $base-font-size;
   color: $base-font-color;
@@ -84,11 +86,37 @@ ul {
   list-style-type: none;
 }
 
+.btn {
+  padding: 5px 15px;
+  border-radius: $radius2;
+  border: 2px solid $grey-200;
+  color: $minor-font-color;
+  text-transform: uppercase;
+  @extend .text1;
+  background-color: $white;
+  cursor: pointer;
+  outline: none;
+  transition: .2s ease;
 
+  &:hover {
+    color: $white;
+    background-color: $blue;
+    border-color: $blue;
+  }
+
+  &:focus {outline: none;}
+}
+
+
+.radio-custom,
 .checkbox-custom {
   position: relative;
   vertical-align: middle;
+}
 
+.checkbox-custom {
+
+  input[type="radio"],
   input[type="checkbox"] {
     width: 20px;
     height: 20px;
@@ -98,12 +126,13 @@ ul {
     vertical-align: -5px;
   }
 
-  span::before {
+  input + span::before {
     content: '\f00c';
     position: absolute;
     left: 0;
-    top: 0;
+    top: 50%;
     width: 20px;
+    transform: translate(0, -50%);
     height: 20px;
     line-height: 22px;
     background: $white;
@@ -118,6 +147,43 @@ ul {
     background: $green;
     color: $white;
     border-color: $green;
+  }
+  &.square {
+    input + span::before {
+      border-radius: 5px;
+    }
+  }
+}
+
+.radio-custom {
+  input[type="radio"],
+  input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    margin-right: 10px;
+    opacity: 0;
+    vertical-align: -5px;
+  }
+
+  input + span::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 18px;
+    height: 18px;
+    transform: translate(0, -50%);
+    background: $light-blue;
+    color: $white;
+    border-radius: 50%;
+    border: 2px solid $grey-200;
+    box-shadow: inset 0 0 0 9px $white;
+    transition: box-shadow .2s ease;
+  }
+
+  input:checked + span::before {
+    box-shadow: inset 0 0 0 4px $white;
   }
 }
 
@@ -170,37 +236,62 @@ ul {
 
 .no-gutters {
   margin: 0;
+  padding: 0;
   
   & > [class*="col-"] {
       padding-left: 0;
       padding-right: 0;
   }
-  padding: 0;
 }
+
+.d-block {
+  display: block;
+}
+
 .m-t-0 {
   margin-top: 0;
 }
+
 .text-left {
   text-align: left;
 }
+
 .text-right {
   text-align: right;
 }
-.block-bg {
-  padding: 10px 15px;
-  background: white;
-  border-radius: $radius1;
+
+.uppercase {
+  text-transform: uppercase;
 }
 
-.fa {
-  font-family: "font-awesome";
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: normal;
-  text-decoration: none;
-  text-transform: none;
+.link {
+  display: inline-block;
+  border-bottom: 1px solid;
+  cursor: pointer;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  color: $blue;
+  @extend .text1;
+  transition: color .2s ease;
+
+  &:hover {
+    color: $base-font-color;
+  }
+}
+
+.block-bg {
+  background: white;
+  border-radius: $radius1;
+  overflow: hidden;
+}
+
+.block-bg__padding {
+  padding: 20px 19px;
+}
+
+
+.active-filter {
+  box-shadow: 0 20px 40px rgba(168, 172, 185, 0.62);
 }
 
 
@@ -208,7 +299,7 @@ ul {
 
 @import 'header';
 @import 'slider';
-@import 'sorting-pannel';
+@import 'sorting-panel';
 @import 'sidebar';
 @import 'product';
 
