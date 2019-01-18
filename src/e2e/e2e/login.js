@@ -9,11 +9,9 @@ export async function openFunnelLoginScreen(t, site) {
     const funnelRegisterScreenLoginLink = Selector(site.links.selectors.FUNNEL_REGISTER__LOGIN);
 
     await mijnBtn.with({ visibilityCheck: true })();
-    console.log('aaa', funnelRegisterScreen);
+
     await t
-        .wait(5000)
-        // .expect(mijnBtn.visible).ok()
-        // .expect(mijnBtn.exists)
+        // .wait(5000)
         .click(mijnBtn)
         .expect(funnelRegisterScreen.exists)
         .ok("Funnel register screen wasn't opened")
@@ -26,6 +24,7 @@ export async function openRegularLoginScreen(t, site) {
     const loginScreen = Selector(site.screens.selectors.LOGIN);
     const mijnBtn = Selector(site.buttons.selectors.MIJNACCOUNT);
 
+    await mijnBtn.with({ visibilityCheck: true })();
     await t
         .expect(mijnBtn.visible).ok()
         .click(mijnBtn)

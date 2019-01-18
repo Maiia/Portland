@@ -178,66 +178,26 @@ config.sites.forEach(site => {
 
 
 
-/**
-    Test Scenario:
-    ----------
-    Preconditions:
-    - For the test we should have access to the My Account page on staging environment
-    - Facebook user with credentials were created:
-        email = "open_blnydrz_user@tfbnw.net"
-    password = "123123qa"
-
-    Steps:
-        1. Open {$url}
-    2. Click on Inloggen met Facebook
-    3. Fill the fields with parameters:
-    - E-mailadres: open_blnydrz_user@tfbnw.net
-    - Wachtwoord: 123123qa
-    5. Press the button INLOGGEN
-    6. Verify that the my account buttons shows the users name Open User
-
-    Expected Result:
-        ----------------
-            User is able to login with Facebook credentials
-
-        [FAIL]
-    -  User can't login
-**/
-
 test('Facebook login flow', async t => {
     const cookiesbarScreen = Selector(config.general.screens.selectors.cookiebar);
     const acceptCookieButton = Selector(config.general.buttons.selectors.acceptCookie);
+    const facebookLoginButton = Selector(config.general.buttons.selectors.facebookLogin);
 
     await t
         .expect(cookiesbarScreen.visible).ok()
         .click(acceptCookieButton)
         .expect(cookiesbarScreen.exists).notOk("Cookies bar wasn't closed");
+
     if (site.funnelFirst) {
         await openFunnelLoginScreen(t, site);
     } else {
         await openRegularLoginScreen(t, site);
-
     }
-    /*
-    * general.screens.selectors.cookiebar exists
-    * click on general.buttons.selectors.acceptCookie
-    * general.screens.selectors.cookiebar doesn't exist
-    *
-    * await openFunnelLoginScreen(t, site);
-    * click on general.buttons.selectors.facebookLogin
-    *
-    *
-    * get opened window -----
-    * var openedWindows = [];
-window._open = window.open; // saving original function
-window.open = function(url,name,params){
-    openedWindows.push(window._open(url,name,params));
-    // you can store names also...
-}
 
-    *
-    *
-    * */
+    await t
+        .expect(facebookLoginButton.exists).ok("Facebook button doesn't exist");
+
+
 });
 
 

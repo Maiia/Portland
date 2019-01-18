@@ -13,7 +13,7 @@ export default {
         buttons: {
             selectors: {
                 acceptCookie: "#cookiebar_wrapper .accept-button",
-                facebookLogin: "button[aria-label='Facebook']"
+                facebookLogin: 'button[aria-label="Facebook"]'
             }
         }
     },
@@ -24,7 +24,8 @@ export default {
             funnelFirst: true,
             screens: {
                 selectors: {
-                    FUNNEL_REGISTER: '#sa-funnel-register',
+                    // FUNNEL_REGISTER: '.gigya-screen.sa-funnel-container',
+                    FUNNEL_REGISTER: '[data-screenset-element-id="sa-funnel-register"]',
                     FUNNEL_LOGIN: '#sa-funnel-login',
                     UPDATE_PROFILE: '#gigya-update-profile-screen',
                     PROFILE_DETAILS: '#gigya-profile-details-screen',
